@@ -4,7 +4,7 @@
 
 ### Improving English ASR Performance for Asian Accents using an Adaptive Ensemble Method
 
-** Best Paper Award — ICISN 2026 (Sixth International Conference on Intelligent Systems and Networks)**
+**Best Paper Award — ICISN 2026 (Sixth International Conference on Intelligent Systems and Networks)**
 **Published by Springer · Hanoi, Vietnam · March 21–22, 2026**
 
 </div>
