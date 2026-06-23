@@ -1,0 +1,165 @@
+{
+  "experiment": "AccentAdapt-Whisper Ensemble with Accent Detection",
+  "date": "2025-10-09 15:41:09",
+  "dataset": {
+    "name": "L2-ARCTIC + CommonVoice",
+    "total_samples": 2885,
+    "test_samples": 2885,
+    "accents": [
+      "chinese",
+      "indian",
+      "korean",
+      "vietnamese",
+      "native"
+    ],
+    "non_native_samples": 2716
+  },
+  "overall_performance": {
+    "small_baseline_wer": 14.975896784388985,
+    "ensemble_wer": 12.433898920900653,
+    "improvement_pp": 2.541997863488332,
+    "improvement_relative_pct": 16.162768209871373
+  },
+  "accent_detection": {
+    "overall_accuracy": 99.8159057437408,
+    "total_tested": 2716,
+    "correct_detections": 2711,
+    "misdetections": 5,
+    "impact_on_wer": {
+      "correct_detection_wer": 12.908691578923964,
+      "wrong_detection_wer": 14.499999999999998,
+      "wer_penalty_pp": 1.5913084210760347
+    }
+  },
+  "per_accent_results": [
+    {
+      "accent": "chinese",
+      "samples": 678,
+      "detection_accuracy": 99.85250737463127,
+      "small_baseline_wer": 17.708640507313074,
+      "ensemble_wer": 14.565471811047031,
+      "improvement_pp": 3.1431686962660432,
+      "improvement_relative_pct": 17.749350634612636
+    },
+    {
+      "accent": "indian",
+      "samples": 679,
+      "detection_accuracy": 100.0,
+      "small_baseline_wer": 8.2310391294191,
+      "ensemble_wer": 6.882290921318902,
+      "improvement_pp": 1.348748208100198,
+      "improvement_relative_pct": 16.38612314792124
+    },
+    {
+      "accent": "korean",
+      "samples": 679,
+      "detection_accuracy": 99.55817378497791,
+      "small_baseline_wer": 11.28250165805394,
+      "ensemble_wer": 9.050377702807747,
+      "improvement_pp": 2.232123955246193,
+      "improvement_relative_pct": 19.783945288878428
+    },
+    {
+      "accent": "native",
+      "samples": 169,
+      "detection_accuracy": 100.0,
+      "small_baseline_wer": 4.756423173582937,
+      "ensemble_wer": 4.756423173582937,
+      "improvement_pp": 0.0,
+      "improvement_relative_pct": 0.0
+    },
+    {
+      "accent": "vietnamese",
+      "samples": 680,
+      "detection_accuracy": 99.8529411764706,
+      "small_baseline_wer": 25.21393271760919,
+      "ensemble_wer": 21.138663215869094,
+      "improvement_pp": 4.075269501740095,
+      "improvement_relative_pct": 16.162768209871373
+    }
+  ],
+  "statistical_significance": {
+    "small_vs_ensemble": {
+      "t_statistic": 11.316862848245712,
+      "p_value": 4.402914836365544e-29,
+      "significant": true,
+      "cohens_d": 0.2106944733103792,
+      "effect_size": "small",
+      "ci_95_lower_pp": 2.101741948112508,
+      "ci_95_upper_pp": 2.9822537788641545
+    },
+    "per_accent_tests": [
+      {
+        "accent": "chinese",
+        "t_statistic": 6.078831059664265,
+        "p_value": 2.0218345807596194e-09,
+        "cohens_d": 0.23345610040020193,
+        "significant": true
+      },
+      {
+        "accent": "indian",
+        "t_statistic": 4.400329617479672,
+        "p_value": 1.2551448989548505e-05,
+        "cohens_d": 0.168869151977633,
+        "significant": true
+      },
+      {
+        "accent": "korean",
+        "t_statistic": 5.338231639016723,
+        "p_value": 1.28172234310917e-07,
+        "cohens_d": 0.20486252810698416,
+        "significant": true
+      },
+      {
+        "accent": "vietnamese",
+        "t_statistic": 6.728652805841219,
+        "p_value": 3.642328099916341e-11,
+        "cohens_d": 0.2580320562094929,
+        "significant": true
+      }
+    ]
+  },
+  "routing_strategy": {
+    "description": "Accent-adaptive routing based on baseline performance gaps",
+    "routing_decisions": [
+      {
+        "accent": "chinese",
+        "routed_to_medium_pct": 100.0,
+        "avg_improvement_pp": 3.1431686962660432
+      },
+      {
+        "accent": "indian",
+        "routed_to_medium_pct": 100.0,
+        "avg_improvement_pp": 1.348748208100198
+      },
+      {
+        "accent": "korean",
+        "routed_to_medium_pct": 100.0,
+        "avg_improvement_pp": 2.232123955246193
+      },
+      {
+        "accent": "native",
+        "routed_to_medium_pct": 0.0,
+        "avg_improvement_pp": 0.0
+      },
+      {
+        "accent": "vietnamese",
+        "routed_to_medium_pct": 100.0,
+        "avg_improvement_pp": 4.075269501740095
+      }
+    ]
+  },
+  "error_analysis": {
+    "high_error_samples_gt_40pct": 212,
+    "improved_over_baseline": 644,
+    "same_as_baseline": 1981,
+    "worse_than_baseline": 260
+  },
+  "key_findings": [
+    "Achieved 16.2% relative WER reduction over Small baseline",
+    "Accent detection accuracy: 99.82%",
+    "Statistical significance: p < 0.001 (highly significant)",
+    "All non-native accents show significant improvements (p < 0.05)",
+    "Minimal penalty from misdetections: 1.59pp increase in WER for 5 errors"
+  ]
+}
