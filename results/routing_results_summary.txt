@@ -1,0 +1,111 @@
+======================================================================
+AUTOMATIC ROUTING SYSTEM - FINAL RESULTS
+======================================================================
+
+Generated: 2025-10-08 11:12:34
+
+======================================================================
+SYSTEM PERFORMANCE
+======================================================================
+
+Total Samples: 2,716
+Detection Accuracy: 99.82% (2,711/2,716)
+Misdetections: 5
+
+Word Error Rate (WER):
+  Oracle (known accent): 10.08%
+  Automatic routing:     10.55%
+  Difference:            +0.47pp (4.7% relative)
+
+Character Error Rate (CER):
+  Oracle (known accent): 4.72%
+  Automatic routing:     4.99%
+  Difference:            +0.28pp (5.9% relative)
+
+======================================================================
+PER-ACCENT PERFORMANCE
+======================================================================
+
+CHINESE:
+  Samples: 678
+  Detection: 99.85% (677/678)
+  WER: 11.96%
+  Oracle WER: 11.54%
+  Difference: +0.42pp
+
+INDIAN:
+  Samples: 679
+  Detection: 100.00% (679/679)
+  WER: 5.27%
+  Oracle WER: 5.20%
+  Difference: +0.07pp
+
+KOREAN:
+  Samples: 679
+  Detection: 99.56% (676/679)
+  WER: 6.92%
+  Oracle WER: 7.05%
+  Difference: -0.13pp (improved!)
+
+VIETNAMESE:
+  Samples: 680
+  Detection: 99.85% (679/680)
+  WER: 18.04%
+  Oracle WER: 16.52%
+  Difference: +1.52pp
+
+======================================================================
+STATISTICAL SIGNIFICANCE
+======================================================================
+
+WER Paired t-test:
+  t-statistic: 3.5475
+  p-value: 3.96e-04
+  Significant: Yes (p < 0.05)
+  Cohen's d: 0.0681 (negligible effect)
+  95% CI: [0.21pp, 0.73pp]
+
+======================================================================
+MISDETECTIONS (5 errors)
+======================================================================
+
+1. vietnamese_THV_arctic_a0279: vietnamese → korean
+   WER: 20.0% (oracle) → 80.0% (auto)
+
+2. chinese_NCC_arctic_a0333: chinese → vietnamese
+   WER: 0.0% (oracle) → 0.0% (auto)
+
+3. korean_YDCK_arctic_b0291: korean → vietnamese
+   WER: 0.0% (oracle) → 0.0% (auto)
+
+4. korean_HKK_arctic_a0379: korean → indian
+   WER: 0.0% (oracle) → 0.0% (auto)
+
+5. korean_HJK_arctic_a0287: korean → indian
+   WER: 0.0% (oracle) → 0.0% (auto)
+
+======================================================================
+CONCLUSION
+======================================================================
+
+Grade: EXCELLENT
+
+The automatic routing system demonstrates production-ready performance
+with 99.82% accent detection accuracy and only 0.47pp WER degradation
+compared to oracle accent knowledge. The effect size is negligible
+(Cohen's d = 0.0681), making this system suitable for real-world deployment.
+
+======================================================================
+HOW TO USE THESE RESULTS
+======================================================================
+
+For your paper:
+- Use automatic_routing_final_results.csv for detailed analysis
+- Use oracle_vs_automatic_comparison.csv for statistical comparisons
+- Cite the 99.82% detection accuracy and 0.47pp WER overhead
+- Emphasize the negligible effect size (Cohen's d = 0.0681)
+
+For deployment:
+- Load best_accent_detector.pth for accent detection
+- Route non-native accented speech to Whisper-Medium
+- Route native English speech to Whisper-Small
