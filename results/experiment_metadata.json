@@ -1,0 +1,56 @@
+{
+  "experiment": "Automatic Routing for Multi-Accent ASR",
+  "timestamp": "2025-10-08T11:12:34.148048",
+  "dataset": "L2-ARCTIC",
+  "total_samples": 2716,
+  "accents": [
+    "chinese",
+    "indian",
+    "korean",
+    "vietnamese"
+  ],
+  "detection_accuracy": 99.82,
+  "misdetections": 5,
+  "wer": {
+    "oracle": 10.08,
+    "automatic": 10.55,
+    "difference_pp": 0.47,
+    "difference_rel": 4.7
+  },
+  "cer": {
+    "oracle": 4.72,
+    "automatic": 4.99,
+    "difference_pp": 0.28,
+    "difference_rel": 5.9
+  },
+  "statistical_tests": {
+    "wer_t_statistic": 3.5475,
+    "wer_p_value": 0.0003956,
+    "cohens_d": 0.0681,
+    "ci_95_lower": 0.21,
+    "ci_95_upper": 0.73
+  },
+  "per_accent": {
+    "chinese": {
+      "samples": 678,
+      "detection_acc": 99.85,
+      "wer": 11.96
+    },
+    "indian": {
+      "samples": 679,
+      "detection_acc": 100.0,
+      "wer": 5.27
+    },
+    "korean": {
+      "samples": 679,
+      "detection_acc": 99.56,
+      "wer": 6.92
+    },
+    "vietnamese": {
+      "samples": 680,
+      "detection_acc": 99.85,
+      "wer": 18.04
+    }
+  },
+  "grade": "EXCELLENT"
+}
